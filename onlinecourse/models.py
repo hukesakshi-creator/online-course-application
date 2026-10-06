@@ -90,10 +90,12 @@ class Lesson(models.Model):
     )
 
     order = models.IntegerField(default=0)
+
     course = models.ForeignKey(
         Course,
         on_delete=models.CASCADE
     )
+
     content = models.TextField()
 
 
@@ -119,7 +121,9 @@ class Enrollment(models.Model):
         on_delete=models.CASCADE
     )
 
-    date_enrolled = models.DateField(default=now)
+    date_enrolled = models.DateField(
+        default=now
+    )
 
     mode = models.CharField(
         max_length=5,
@@ -127,7 +131,9 @@ class Enrollment(models.Model):
         default=AUDIT
     )
 
-    rating = models.FloatField(default=5.0)
+    rating = models.FloatField(
+        default=5.0
+    )
 
 
 # Question model
